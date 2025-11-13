@@ -1,0 +1,546 @@
+/* add headline font */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+
+/* color setup: allows for nice full-page transitions */
+@property --theme-color {
+  syntax: '<color>';
+  initial-value: #ffffff;
+  inherits: false;
+}
+@property --line-color {
+  syntax: '<color>';
+  initial-value: #7764fc; /* transparency will lead to overlay issues with image borders */
+  inherits: false;
+}
+@property --color {
+  syntax: '<color>';
+  initial-value: #ffffff;
+  inherits: false;
+}
+@property --bg-color {
+  syntax: '<color>';
+  initial-value: #462bfb;
+  inherits: false;
+}
+* {
+  transition: --theme-color, --line-color, --bg-color, --color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+/* body */
+/* "columns" applied via widths and the bg lines of .content */
+body {
+  --inset: 25px;
+  --cols: 3;
+  --text-cols: var(--cols); /* text uses up all columns by default (see grid layout for project page alternative) */
+  --col-width: 239px;
+  /* sidebar width = col-width for consistent col layout */
+  --sidebar-width: var(--col-width);
+  /* max width = min(full width - sidebar width, total column width) */
+  --main-max-width: min(calc(100vw - var(--sidebar-width)), calc(var(--cols) * var(--col-width)));
+  /* width for maximum number of fitting columns (always <= --main-max-width) */
+  --main-max-width-cols: round(down, var(--main-max-width), var(--col-width)); 
+  background-color: var(--bg-color);
+  color: var(--color);
+}
+body.close {
+  --main-max-width: min(calc(100vw - var(--inset)), calc(var(--cols) * var(--col-width)));
+}
+
+/* content */
+section.content {
+  width: calc(100 - var(--inset));
+  height: fit-content;
+  min-height: 100vh;
+  left: var(--sidebar-width);
+  margin-left: 0;
+  padding: 0;
+  /* col grid bg */
+  background-image: repeating-linear-gradient(to right, var(--line-color) 0px, var(--line-color) 1px, #ffffff00 1px, #ffffff00 var(--col-width));
+}
+
+/* main */
+body .markdown-section {
+  /* apply column logic for wider viewports */
+  width: min(var(--main-max-width), var(--main-max-width-cols));
+  max-width: unset;
+  margin: 0;
+  padding: var(--inset) 0;
+}
+@media only screen and (743px <= width <= 956px) {
+  body:not(.close) .markdown-section {
+    width: max(var(--main-max-width), var(--main-max-width-cols));
+  }
+}
+@media only screen and (max-width: 742px) {
+  body {
+    --main-max-width: min(calc(100vw - var(--inset)), calc(var(--cols) * var(--col-width)));
+  }
+  body .markdown-section {
+    width: max(var(--main-max-width), var(--main-max-width-cols));
+  }
+}
+/* every element is padded to allow for offsets */
+.markdown-section > * {
+  padding-left: var(--inset);
+  padding-right: var(--inset);
+}
+.markdown-section ul {
+  padding-left: calc(var(--inset) + 1.1rem); /* correct for list items */
+}
+.markdown-section > p:has(img) {
+  padding: 0 !important;
+  margin: 0;
+}
+.markdown-section img {
+  width: calc(100% - 1px);
+  outline: 1px solid var(--line-color);
+  margin-left: 1px; /* outline offset */
+  margin-top: 1px; /* outline offset */
+}
+
+/* sidebar */
+h1.app-name {
+  text-align: left;
+}
+.sidebar-toggle {
+  background-color: unset;
+  padding: 16px calc(var(--inset) - 8px) 16px calc(var(--inset) - 8px);
+  width: 50px;
+  height: 50px;
+  transition: padding 0.3s ease;
+}
+.app-sub-sidebar li:before {
+  content: unset;
+  padding-right: unset;
+  float: unset;
+}
+.sidebar {
+  padding: 35px 0 0 calc(var(--inset) - 16px/2);
+  border-right: unset;
+  background-color: unset;
+  color: unset;
+  width: var(--col-width);
+  transition: transform .3s ease;
+}
+body.close .sidebar {
+  transform: translateX(--sidebar-width);
+}
+.sidebar>h1 a {
+  margin-left: -4px; /* align with sidebar items */
+}
+.sidebar-nav ul {
+  margin: 0;
+  padding: 0;
+}
+.sidebar li {
+  margin: 4px 0px 4px 0px;
+}
+.sidebar-nav ul li a {
+  font-size: 1rem;
+  padding-right: 0.5rem;
+  display: inline-block;
+  color: var(--color);
+  font-weight: 600;
+  background-color: var(--bg-color);
+  max-width: 85%;
+  line-height: 1.2rem;
+  opacity: 1;
+  transition: opacity 0.1s;
+}
+.sidebar-nav > ul > li > ul > li > a {
+  font-weight: 400;
+}
+.sidebar ul li ul {
+  padding: 0;
+  margin: 0;
+}
+.sidebar li ul li {
+  margin: 4px 0px 4px 6px;
+}
+.sidebar a:hover, .sidebar a:active {
+  text-decoration: none;
+}
+.sidebar ul li a:hover, .sidebar ul li a:active {
+  text-decoration: none;
+  opacity: 0.8;
+}
+.sidebar ul li.active>a {
+  border: none;
+}
+.sidebar ul li ul li.active>a {
+  font-weight: 400;
+}
+/* line decoration */
+.sidebar li.active {
+  background-image: repeating-linear-gradient(to bottom, var(--line-color) 0px, var(--line-color) 1px, #ffffff00 1px, #ffffff00 3px, var(--line-color) 1px);
+  background-position: 0 0.6rem;
+  background-repeat: repeat-x;
+  background-size: 1px 3px;
+}
+/* fix buggy sidebar on small viewport (see also JS plugin below) */
+body.close .content {
+  margin-left: var(--inset);
+}
+@media screen and (max-width: 768px) {
+  .content {
+    width: calc(100vw - var(--inset));
+    transform: translateX(var(--sidebar-width));
+  }
+  .sidebar {
+    left: calc(-1 * var(--sidebar-width));
+    transform: translateX(var(--sidebar-width));
+  }
+  body.close .content {
+    transform: translateX(0px);
+  }
+  body.close .sidebar {
+    transform: translateX(calc(-1 * var(--sidebar-width)));
+  }
+  body.close .sidebar-toggle {
+    background-color: unset;
+    padding: 16px calc(var(--inset) - 8px) 16px calc(var(--inset) - 8px);
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* p, em, span */
+.markdown-section p {
+  margin: 1rem 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+p + ul {
+  margin-top: -15px;
+}
+p.posthl-italic {
+  font-style: italic;
+  margin-top: 0;
+}
+
+/* em */
+.markdown-section em {
+  color: var(--color);
+  opacity: 0.8;
+}
+
+/* strong */
+.markdown-section strong {
+  color: var(--color);
+  font-weight: 600;
+}
+
+/* span */
+span.grant-amount {
+  color: rgba(var(--color), 0.8);
+  font-style: italic;
+}
+
+/* Headlines */
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section h5 {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 1rem;
+  font-family: "Playfair Display";
+}
+.markdown-section h1.anchor:hover {
+  text-decoration: none;
+}
+.markdown-section h1 {
+  margin-top: 1rem;
+  line-height: 2.3rem;
+  transition: margin 0.3s ease;
+}
+.markdown-section h1::before {
+    content: " ";
+    display: block;
+    height: 1rem; /* add some spacing that is unaffected by the first-child margin clear*/
+}
+.markdown-section h2 {
+  background-size: 1px 1px;
+  margin-top: 2rem;
+}
+.markdown-section h3 {
+  padding-top: 20px;
+  padding-bottom: 0.6rem
+}
+.markdown-section h4 {
+  padding-top: 10px;
+  padding-bottom: 0.4rem
+}
+.markdown-section h1 a {
+  color: var(--theme-color);
+}
+.markdown-section h2 a,
+.markdown-section h3 a,
+.markdown-section h4 a,
+.markdown-section h5 a {
+  color: var(--color);
+}
+.markdown-section span {
+  color: unset;
+}
+
+/* a */
+.markdown-section a:hover {
+  text-decoration: none;
+}
+.markdown-section a.button {
+  border-radius: 1rem;
+  border: 1px solid #42b983;
+  border-color: var(--theme-color, #42b983);
+  box-sizing: border-box;
+  color: #42b983;
+  color: var(--theme-color, #42b983);
+  display: inline-block;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  letter-spacing: .1rem;
+  margin: .4rem 0.5rem 0.4rem 0;
+  padding: .375em 0.75rem;
+  text-decoration: none;
+  opacity: 1;
+  transition: all .15s ease;
+}
+.markdown-section a.button:hover {
+  background-color: var(--theme-color);
+  color: var(--bg-color);
+}
+
+
+/* select */
+select {
+  background: none;
+  border: none;
+  color: var(--theme-color);
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+/* Tables */
+/* table > thead:has(> tr > th:empty):not(:has(> tr > th:not(:empty))) {
+display: none;
+} */
+.markdown-section table {
+  margin: 0.8rem 0;
+  line-height: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+}
+.markdown-section tbody {
+  vertical-align: top;
+}
+.markdown-section td, .markdown-section th {
+  border: 0px;
+  padding: 4px 25px 4px 0px;
+}
+.markdown-section tr {
+  border: 0px;
+}
+.markdown-section tr:nth-child(2n) {
+  background-color: unset;
+}
+.markdown-section ol, .markdown-section p, .markdown-section ul {
+  line-height: 1.5rem;
+  word-spacing: .05rem;
+}
+/* first col */
+table.cv tr td:first-child {
+  white-space: nowrap;
+  font-weight: 600;
+}
+/* wider first col */
+table.cv-fixed tr td:first-child {
+  min-width: 145px;
+  font-weight: 600;
+}
+/* small viewports: stack table cells */
+@media only screen and (max-width: 600px) {
+  .markdown-section tr {
+    display: block;
+    margin-top: 0.7rem;
+  }
+  .markdown-section tr:first-child {
+    margin-top: 0rem
+  }
+  .markdown-section td {
+    display: table-row;
+  }
+}
+
+/* index styling */
+/* defaults for elements: 2-col wide */
+body[data-page="README.md"] .markdown-section > * {
+  max-width: calc(2 * var(--col-width));
+}
+/* row 1, col 3: profile image */
+body[data-page="README.md"] p:has(img.profile) {
+  width: calc(1 * var(--col-width));
+  line-height: 0;
+  position: absolute;
+  top: var(--inset);
+  left: round(to-zero, calc(var(--main-max-width) - var(--col-width)), var(--col-width));
+  transition: left 0.3s ease;
+  transition-delay: 0.4s;
+}
+/* row 2, col 1: h1 and pronouns */
+body[data-page="README.md"] .markdown-section h1 {
+  width: var(--col-width);
+}
+body[data-page="README.md"] .markdown-section h1::before {
+  height: 8.5rem;
+}
+@media only screen and (max-width: 503px) {
+  body[data-page="README.md"] .markdown-section h1::before {
+    height: 16.5rem;
+  }
+}
+
+/* cv styling */
+body[data-page="cv/README.md"], body[data-page="cv/README.md"] * {
+  --bg-color: #ffffff;
+  --theme-color: #462bfb;
+  --line-color: #462bfb44;
+  --color: #413a70;
+}
+
+/* portfolio root styling */
+body:is([data-page="portfolio/README.md"]) {
+  /* get available columns */
+  --cols: 4;
+}
+/* text + image grid */
+div.portfolio-grid {
+  margin-top: 1.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--col-width));
+}
+div.portfolio-grid a {
+  width: calc(var(--col-width));
+  height: calc(var(--col-width) + 1px);
+  margin-top: -1px;
+  padding: var(--inset);
+  position: relative;
+  font-family: "Playfair Display";
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-decoration: none;
+  background-image: repeating-linear-gradient(to bottom, var(--line-color) 0px, var(--line-color) 1px, #ffffff00 1px, #ffffff00 var(--col-width));
+}
+/* use 100% of space whenever 1-col layout */
+@media only screen and (528px <= width <= 768px) {
+  body:not(.close) div.portfolio-grid {
+    grid-template-columns: repeat(auto-fill, var(--col-width));
+  }
+}
+@media only screen and (max-width: 527px) {
+  div.portfolio-grid {
+    margin-right: var(--inset);
+    grid-template-columns: repeat(auto-fill, var(--col-width));
+  }
+  div.portfolio-grid a {
+    width: calc(var(--main-max-width) - var(--inset));
+    height: calc(var(--main-max-width) - var(--inset) + 1px);
+  }
+}
+div.portfolio-grid a img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+div.portfolio-grid a:hover img {
+  position: absolute;
+  opacity: 0.1;
+}
+
+/* portfolio page styling */
+body:is([data-page^="portfolio/"]):not([data-page="portfolio/README.md"]) {
+  /* get available columns */
+  --cols: 6;
+  --text-cols: 2;
+}
+/* text + image grid */
+.markdown-section:has(div.image-col) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--col-width));
+}
+/* text (all other elements except div.image-col) */
+.markdown-section:has(div.image-col) > *:not(div.image-col) {
+  grid-column-start: 1;
+  grid-column-end: calc(var(--text-cols) + 1);
+}
+.markdown-section:has(div.image-col) > p:has(+ p) {
+  margin-bottom: 0; /* imitate collapse, but not easily possible in grid */
+}
+.markdown-section:has(div.image-col) > p:has(a.button) + p:has(a.button)  {
+  margin-top: 0; /* imitate collapse, but not easily possible in grid */
+}
+/* image full-column in grid, always on the right filling all available columns after text */
+div.image-col {
+  margin: 0;
+  padding: 0;
+  grid-column-start: calc(var(--text-cols) + 1);
+  grid-column-end: 99;
+  grid-row-start: 1;
+  grid-row-end: 99;
+  max-width: unset;
+}
+/* single-col layout on smaller viewports */
+@media only screen and (981px <= width <= 1194px) {
+  body:not(.close) .markdown-section:has(div.image-col) > *:not(div.image-col) {
+    grid-column-start: 1;
+    grid-column-end: 99;
+  }
+  body:not(.close) div.image-col {
+    grid-column-start: 1;
+    grid-row-start: unset;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .markdown-section:has(div.image-col) > *:not(div.image-col) {
+    grid-column-start: 1;
+    grid-column-end: 99;
+  }
+  div.image-col {
+    grid-column-start: 1;
+    grid-row-start: unset;
+  }
+}
+a:not(.button).project-lightbox {
+  display: none;
+}
+a:not(.button).project-lightbox:first-child {
+  display: block;
+}
+
+
+/* print -> exclude intro, adjust padding */
+@media print
+  {
+    .content {
+      padding-top: 0px;
+    }
+
+    #main p:nth-of-type(2) {
+      display: none;
+    }
+
+    body .sidebar,
+    body .sidebar-toggle {
+      display: none !important;
+    }
+    body .content {
+      left: 0px !important;
+    }
+  }

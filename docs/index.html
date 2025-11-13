@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maximilian Sprengholz</title>
+  <link rel="icon" href="favicon.ico" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="author" content="Maximilian Sprengholz">
+  <meta name="description" content="Homepage Maximilian Sprengholz">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/imagelightbox.css">
+</head>
+<body>
+
+  <div id="app"></div>
+  
+  <script type="module">
+    import { ImageLightbox } from "/docs/js/imagelightbox.js";
+    window.$docsify = {
+        loadSidebar: true,
+        alias: {
+          '/cv/_sidebar.md': '/_sidebar.md'
+        },
+        plugins: [
+          function fixSideBar(hook, vm) {
+            // set body class to 'close' sidebar collapsed on load/resize
+            function setSideBarState(sb) {
+                var style = getComputedStyle(sb);
+                var left = parseInt(style.getPropertyValue("left"), 10);
+                if (left < 0) {
+                  document.body.classList.add("close");
+                } 
+            };
+            // do once on load and on window resize
+            hook.ready(function () {
+              const sb = document.getElementsByClassName("sidebar")[0];
+              setSideBarState(sb);
+              window.addEventListener("resize", function(){ setSideBarState(sb) });
+            });
+          },
+          function initLightbox(hook, vm) {
+            // init lightbox for portfolio projects
+            hook.doneEach(function () {
+              const lightbox = new ImageLightbox(
+                document.querySelectorAll("a.project-lightbox"),
+                {
+                  animationSpeed: 100,
+                  activity: false,
+                  arrows: false,
+                  button: false,
+                  navigation: true,
+                  fullscreen: false,
+                },
+              );
+              // open gallery also via button click
+              const lightboxBtn = document.getElementById("lightbox-btn");
+              if (typeof(lightboxBtn) != "undefined" && lightboxBtn != null) {
+                lightboxBtn.onclick = function() {
+                  lightbox.open();
+                  return false;
+                };
+              };
+            });
+          }
+        ]
+    }
+  </script>
+
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+  <!-- bash highlighting -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+
+  <!-- namespaces -->
+  <script src="https://unpkg.com/docsify-namespaced"></script>
+
+</body>
+</html>
