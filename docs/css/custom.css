@@ -357,7 +357,11 @@ table.cv tr td:first-child {
   font-weight: 600;
 }
 /* wider first col */
-table.cv-fixed tr td:first-child {
+table.cv-fixed-m tr td:first-child {
+  min-width: 100px;
+  font-weight: 600;
+}
+table.cv-fixed-l tr td:first-child {
   min-width: 145px;
   font-weight: 600;
 }
@@ -525,17 +529,17 @@ a:not(.button).project-lightbox:first-child {
 }
 
 
-/* print -> exclude intro, adjust padding */
+/* print -> full width, no padding, no sidebar */
 @media print
   {
-    .content {
-      padding-top: 0px;
+    body .markdown-section {
+      width: 100%;
+      max-width: unset;
+      padding: 0;
     }
-
-    #main p:nth-of-type(2) {
-      display: none;
+    .markdown-section h1::before {
+      height: 0rem;
     }
-
     body .sidebar,
     body .sidebar-toggle {
       display: none !important;

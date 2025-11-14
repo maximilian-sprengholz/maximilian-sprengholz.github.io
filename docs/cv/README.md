@@ -7,9 +7,10 @@ Ueckermünder Str. 1 <br />
 <a class="button" href="https://orcid.org/0000-0003-3829-3665">ORCiD</a>
 <a class="button" href="https://github.com/maximilian-sprengholz">GitHub</a>
 
+
 ## Professional Experience
 
-<table class="cv-fixed">
+<table class="cv-fixed-l">
 <tr>
   <td>05/2022 – 12/2024</td>
   <td>Researcher, Berliner Institut für empirische Integrations- und Migrationsforschung (BIM), Humboldt-Universität zu Berlin as part of the BMFSFJ-funded Forschungsgruppe Diskriminierung und Rassismus (FoDiRa) in the sub-project <i>Seeing Your Religion – Regional Variation of Anti-Muslim Discrimination and Racism on the German Labor Market</i>. PIs: Zerrin Salikutluk , Christian Hunkler (HU Berlin & BIM), Yuliya Kosyakova (IAB), Daniel Auer (MZES)</td>
@@ -39,7 +40,7 @@ Ueckermünder Str. 1 <br />
 
 ## Education
 
-<table class="cv-fixed">
+<table class="cv-fixed-l">
 <tr>
   <td>02/2019 – 06/2025</td>
   <td>
@@ -62,9 +63,10 @@ Ueckermünder Str. 1 <br />
 </tr>
 </table>
 
+
 ## Expertise and Skills
 
-<table class="cv">
+<table class="cv-fixed-m">
 <tr>
 <td>Research</td>
 <td>Labor market inequality (especially by gender and nativity), intersectionality, quantitative methods, migration and integration, poverty, discrimination, racism, (experimental) survey design/programming</td>
@@ -76,6 +78,93 @@ Ueckermünder Str. 1 <br />
 <td>German: native, English: C1</td>
 </tr>
 </table>
+
+
+## Further Training
+
+<table class="cv-fixed-m">
+<tr>
+  <td>Ongoing</td>
+  <td>
+  HarvardX CS50AI course <i>Machine Learning and AI with Python</i>, online, expected completion 11/2025
+  </td>
+</tr>
+<tr>
+  <td>2025</td>
+  <td>
+  HarvardX CS50AI course <a href="https://courses.edx.org/certificates/a8d09c4811ab48af92437647cea44878"><i>Introduction to Artificial Intelligence with Python</i></a>, online
+  </td>
+</tr>
+<tr>
+  <td>2023</td>
+  <td>
+  BERD Academy course <i>Microsimulation and Machine Learning with Official Statistics</i>, online
+  </td>
+</tr>
+<tr>
+  <td>2023</td>
+  <td>
+  Workshop <i>Publishing Open Access</i>, Humboldt-Universität zu Berlin
+  </td>
+</tr>
+<tr>
+  <td>2023</td>
+  <td>
+  Workshop <i>Academic Editors' Perspective: Writing and Publishing in Peer-Reviews Journals</i>, Humboldt-Universität zu Berlin
+  </td>
+</tr>
+<tr>
+  <td>2021</td>
+  <td>
+  DYNAMICS workshops <i>Survey Experiments</i> and <i>Online Experiments</i>, online
+  </td>
+</tr>
+<tr>
+  <td>2021</td>
+  <td>
+  Summer School <i>Visualizing Open Access</i>, Humboldt-Universität zu Berlin
+  </td>
+</tr>
+<tr>
+  <td>2020 – 2021</td>
+  <td>
+  Writing Workshop, Department of Social Sciences, Humboldt-Universität zu Berlin
+  </td>
+</tr>
+</table>
+
+
+## Awards and Grants
+
+<table class="cv">
+<tr>
+  <td>2023</td>
+  <td>
+  <a href="https://sase.org/news/2023-ser-best-article-prize/">SER Best Article Prize</a> for Sprengholz, M., Wieber, A., & Holst, E. (2020). Gender identity and wives’ labor market outcomes in West and East Germany between 1983 and 2016. <i>Socio-Economic Review, mwaa048</i><br/>
+  <span class="grant-amount">$1,000</span>
+  </td>
+</tr>
+<tr>
+  <td>2022</td>
+  <td>
+  Research Grant for <i>Seeing Your Religion – Regional Variation of Anti-Muslim Discrimination and Racism on the German Labor Market</i>, 2022-2024, Federal Ministry for Family Affairs, Senior Citizens, Women and Youth (BMFSJ). PIs: Zerrin Salikutluk, Christian Hunkler (BIM), Yuliya Kosyakova (IAB), Daniel Auer (MZES)<br />
+  <span class="grant-amount">€420,000</span>
+  </td>
+</tr>
+<tr>
+  <td>2021</td>
+  <td>
+  Best Prototype Award of the Open Access Summer School, Humboldt-Universität zu Berlin, for <a href="https://observablehq.com/@sansan/open-access-time-tracker">this prototype</a>. See also <a href="https://github.com/maximilian-sprengholz/visoa">https://github.com/maximilian-sprengholz/visoa</a>
+  </td>
+</tr>
+<tr>
+  <td>2016</td>
+  <td>
+  Shortlisted for the Deutscher Preis für Onlinekommunikation for the <a href="#/portfolio/spd.md">website relaunch of SPD.de</a> with BUTTERBERLIN
+  </td>
+</tr>
+</table>
+
 
 ## Publications
 
@@ -169,36 +258,6 @@ See also my GitHub page for public code: https://github.com/maximilian-sprenghol
 </tr>
 </table>
 
-## Awards and Grants
-
-<table class="cv">
-<tr>
-  <td>2023</td>
-  <td>
-  <a href="https://sase.org/news/2023-ser-best-article-prize/">SER Best Article Prize</a> for Sprengholz, M., Wieber, A., & Holst, E. (2020). Gender identity and wives’ labor market outcomes in West and East Germany between 1983 and 2016. <i>Socio-Economic Review, mwaa048</i><br/>
-  <span class="grant-amount">$1,000</span>
-  </td>
-</tr>
-<tr>
-  <td>2022</td>
-  <td>
-  Research Grant for <i>Seeing Your Religion – Regional Variation of Anti-Muslim Discrimination and Racism on the German Labor Market</i>, 2022-2024, Federal Ministry for Family Affairs, Senior Citizens, Women and Youth (BMFSJ). PIs: Zerrin Salikutluk, Christian Hunkler (BIM), Yuliya Kosyakova (IAB), Daniel Auer (MZES)<br />
-  <span class="grant-amount">€420,000</span>
-  </td>
-</tr>
-<tr>
-  <td>2021</td>
-  <td>
-  Best Prototype Award of the Open Access Summer School, Humboldt-Universität zu Berlin, for <a href="https://observablehq.com/@sansan/open-access-time-tracker">this prototype</a>. See also <a href="https://github.com/maximilian-sprengholz/visoa">https://github.com/maximilian-sprengholz/visoa</a>
-  </td>
-</tr>
-<tr>
-  <td>2016</td>
-  <td>
-  <a href="https://www.dpok.de/rueckblick/best-of-2016/#22-website">Shortlisted</a> for the Deutscher Preis für Onlinekommunikation for the website relaunch of SPD.de with BUTTERBERLIN
-  </td>
-</tr>
-</table>
 
 ## Teaching Experience
 
@@ -228,6 +287,7 @@ See also my GitHub page for public code: https://github.com/maximilian-sprenghol
   </td>
 </tr>
 </table>
+
 
 ## Further Academic Activity
 
@@ -264,59 +324,6 @@ See also my GitHub page for public code: https://github.com/maximilian-sprenghol
   <td>2018</td>
   <td>
   Student member of the search committee for the S-Professorship <i>Social Science Research Methods (Focus on Survey Methodology)</i>, Humboldt-Universität zu Berlin
-  </td>
-</tr>
-</table>
-
-## Further Training
-
-<table class="cv">
-<tr>
-  <td>Ongoing</td>
-  <td>
-  HarvardX CS50AI course <i>Machine Learning and AI with Python</i>, online. Expected completion November 2025.
-  </td>
-</tr>
-<tr>
-  <td>2025</td>
-  <td>
-  HarvardX CS50AI course <a href="https://courses.edx.org/certificates/a8d09c4811ab48af92437647cea44878"><i>Introduction to Artificial Intelligence with Python</i></a>, online. 
-  </td>
-</tr>
-<tr>
-  <td>2023</td>
-  <td>
-  BERD Academy course <i>Microsimulation and Machine Learning with Official Statistics</i>, online
-  </td>
-</tr>
-<tr>
-  <td>2023</td>
-  <td>
-  Workshop <i>Publishing Open Access</i>, Humboldt-Universität zu Berlin
-  </td>
-</tr>
-<tr>
-  <td>2023</td>
-  <td>
-  Workshop <i>Academic Editors' Perspective: Writing and Publishing in Peer-Reviews Journals</i>, Humboldt-Universität zu Berlin
-  </td>
-</tr>
-<tr>
-  <td>2021</td>
-  <td>
-  DYNAMICS workshops <i>Survey Experiments</i> and <i>Online Experiments</i>, online
-  </td>
-</tr>
-<tr>
-  <td>2021</td>
-  <td>
-  Summer School <i>Visualizing Open Access</i>, Humboldt-Universität zu Berlin
-  </td>
-</tr>
-<tr>
-  <td>2020 – 2021</td>
-  <td>
-  Writing Workshop, Department of Social Sciences, Humboldt-Universität zu Berlin
   </td>
 </tr>
 </table>
