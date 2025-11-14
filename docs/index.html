@@ -18,12 +18,14 @@
   
   <script type="module">
     import { ImageLightbox } from "/js/imagelightbox.js";
-    // import { ImageLightbox } from "docs/js/imagelightbox.js"; // local
+    //import { ImageLightbox } from "/docs/js/imagelightbox.js"; // local
     window.$docsify = {
         loadSidebar: true,
+        subMaxLevel: 2,
         alias: {
           '/cv/_sidebar.md': '/_sidebar.md'
         },
+        auto2top: true,
         plugins: [
           function fixSideBar(hook, vm) {
             // set body class to 'close' sidebar collapsed on load/resize
