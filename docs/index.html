@@ -16,16 +16,29 @@
 
   <div id="app"></div>
   
-  <script type="module">
-    import { ImageLightbox } from "/js/imagelightbox.js";
-    //import { ImageLightbox } from "/docs/js/imagelightbox.js"; // local
+  <script>
     window.$docsify = {
         loadSidebar: true,
         subMaxLevel: 2,
-        alias: {
-          '/cv/_sidebar.md': '/_sidebar.md'
-        },
         auto2top: true,
+        alias: {
+          "/de/cv/_sidebar.md": "/de/_sidebar.md",
+          "/cv/_sidebar.md": "/_sidebar.md",
+        },
+        name: '<select id="lang-selector" name="lang">' +
+                '<option value="">EN</value>' +
+                '<option value="de">DE</value>' +
+              '</select>',
+        nameLink: false, // avoid navigating when clicking on select
+        fallbackLanguages: ['de'],
+        namespaces: [
+          {
+            id: "lang",
+            values: ["de"],
+            optional: true, 
+            selector: "#lang-selector",
+          },
+        ],
         plugins: [
           function fixSideBar(hook, vm) {
             // set body class to 'close' sidebar collapsed on load/resize
@@ -38,15 +51,16 @@
             };
             // do once on load and on window resize
             hook.ready(function () {
-              const sb = document.getElementsByClassName("sidebar")[0];
+              const sb = document.getElementsByClassName("sidebar")[0]; 
               setSideBarState(sb);
               window.addEventListener("resize", function(){ setSideBarState(sb) });
             });
           },
-          function initLightbox(hook, vm) {
+          async function initLightbox(hook, vm) {
+            const ilb = await import("./js/imagelightbox.js");
             // init lightbox for portfolio projects
             hook.doneEach(function () {
-              const lightbox = new ImageLightbox(
+              const lightbox = new ilb.ImageLightbox(
                 document.querySelectorAll("a.project-lightbox"),
                 {
                   animationSpeed: 100,

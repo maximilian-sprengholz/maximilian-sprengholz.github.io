@@ -7,8 +7,8 @@ Design made at [fischerAppelt Stuttgart](http://www.fischerappelt.de ':target=_b
 <!-- portfolio-replace -->
 <a class="button" id="lightbox-btn" href="#">All Images</a><br />
 <div class="image-col">
-<a href="portfolio/../img/swr_1.jpg" class="project-lightbox" title="SWR1 CLP Campaign portfolio image 0"><img src="portfolio/../img/swr_1.jpg" alt="SWR1 CLP Campaign portfolio image 0" /></a>
-<a href="portfolio/../img/swr_2.jpg" class="project-lightbox" title="SWR1 CLP Campaign portfolio image 1"></a>
-<a href="portfolio/../img/swr_3.jpg" class="project-lightbox" title="SWR1 CLP Campaign portfolio image 2"></a>
+<a href="portfolio/../media/swr_1.jpg" class="project-lightbox" title="SWR1 CLP Campaign portfolio image 0"><img src="portfolio/../media/swr_1.jpg" alt="SWR1 CLP Campaign portfolio image 0" /></a>
+<a href="portfolio/../media/swr_2.jpg" class="project-lightbox" title="SWR1 CLP Campaign portfolio image 1"></a>
+<a href="portfolio/../media/swr_3.jpg" class="project-lightbox" title="SWR1 CLP Campaign portfolio image 2"></a>
 </div>
 <!-- portfolio-replace -->

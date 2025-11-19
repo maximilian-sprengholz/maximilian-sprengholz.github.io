@@ -96,7 +96,7 @@ def populate_projects(portfolio):
         if re.match(re.escape(portfolio["replace_tag"]), line) != None and replaced == 0:
           print(line, file=f)
           # add lightbox button
-          print('<a class="button" id="lightbox-btn" href="#">All Images</a><br />', file=f)
+          print('<a class="button" id="lightbox-btn" href="#">' + portfolio["lightbox_btn_text"] + '</a><br />', file=f)
           # wrap in in div, allow for flex layout
           print('<div class="image-col">', file=f)
           for i, image in enumerate(project.images):
@@ -195,7 +195,8 @@ def main():
     "--portfolio_path",
     "-pp", 
     help="Path to the portfolio dir with all project md files.",
-    type=str
+    type=str,
+    required=True
   )
   parser.add_argument(
     "--rel_image_path",
@@ -210,6 +211,13 @@ def main():
     help="The tag marking the start and end lines of what is to be replaced in each markdown file by this program. Defaults to '<!-- portfolio-replace -->'",
     type=str,
     default="<!-- portfolio-replace -->"
+  )
+  parser.add_argument(
+    "--lightbox_btn_text",
+    "-lbt", 
+    help="Text on the button to open the lightbox. Defaults to 'All images'",
+    type=str,
+    default="All images"
   )
   args = dict(vars(parser.parse_args()))
   
@@ -238,6 +246,7 @@ def main():
     image_path = image_path,
     image_path_rel = docsify_rel_path(image_path, root = path_rel),
     replace_tag = replace_tag,
+    lightbox_btn_text = args["lightbox_btn_text"],
     projects = []
   )
   get_projects(portfolio)

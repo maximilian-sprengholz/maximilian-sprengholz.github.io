@@ -8,4 +8,4 @@ I recently earned my PhD in Sociology from Humboldt-Universität zu Berlin, wher
 <a class="button" href="#/portfolio/README.md">Design Portfolio</a><br />
 <a class="button" href="mailto:maximilian.sprengholz@protonmail.com">Email</a>
 
-![Maximilian Sprengholz](img/profile.jpg ":class=profile")
+![Maximilian Sprengholz](media/profile.jpg ":class=profile")

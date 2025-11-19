@@ -7,11 +7,11 @@ Freelance work, 2013.
 <!-- portfolio-replace -->
 <a class="button" id="lightbox-btn" href="#">All Images</a><br />
 <div class="image-col">
-<a href="portfolio/../img/jpbw_cd_1.svg" class="project-lightbox" title="JPBW Corporate Design portfolio image 0"><img src="portfolio/../img/jpbw_cd_1.svg" alt="JPBW Corporate Design portfolio image 0" /></a>
-<a href="portfolio/../img/jpbw_cd_2.jpg" class="project-lightbox" title="JPBW Corporate Design portfolio image 1"></a>
-<a href="portfolio/../img/jpbw_cd_3.svg" class="project-lightbox" title="JPBW Corporate Design portfolio image 2"></a>
-<a href="portfolio/../img/jpbw_cd_4.jpg" class="project-lightbox" title="JPBW Corporate Design portfolio image 3"></a>
-<a href="portfolio/../img/jpbw_cd_5.jpg" class="project-lightbox" title="JPBW Corporate Design portfolio image 4"></a>
-<a href="portfolio/../img/jpbw_cd_6.jpg" class="project-lightbox" title="JPBW Corporate Design portfolio image 5"></a>
+<a href="portfolio/../media/jpbw_cd_1.svg" class="project-lightbox" title="JPBW Corporate Design portfolio image 0"><img src="portfolio/../media/jpbw_cd_1.svg" alt="JPBW Corporate Design portfolio image 0" /></a>
+<a href="portfolio/../media/jpbw_cd_2.jpg" class="project-lightbox" title="JPBW Corporate Design portfolio image 1"></a>
+<a href="portfolio/../media/jpbw_cd_3.svg" class="project-lightbox" title="JPBW Corporate Design portfolio image 2"></a>
+<a href="portfolio/../media/jpbw_cd_4.jpg" class="project-lightbox" title="JPBW Corporate Design portfolio image 3"></a>
+<a href="portfolio/../media/jpbw_cd_5.jpg" class="project-lightbox" title="JPBW Corporate Design portfolio image 4"></a>
+<a href="portfolio/../media/jpbw_cd_6.jpg" class="project-lightbox" title="JPBW Corporate Design portfolio image 5"></a>
 </div>
 <!-- portfolio-replace -->
