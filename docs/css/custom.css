@@ -117,7 +117,7 @@ h1.app-name {
   float: unset;
 }
 .sidebar {
-  padding: 35px 0 0 calc(var(--inset) - 16px/2);
+  padding: 0.5rem 0 0 calc(var(--inset) - 16px/2);
   border-right: unset;
   background-color: unset;
   color: unset;
@@ -316,7 +316,7 @@ span.grant-amount {
 
 /* select */
 select {
-  background: none;
+  background-color: var(--bg-color);
   border: none;
   color: var(--theme-color);
   padding: 0;
@@ -381,11 +381,11 @@ table.cv-fixed-l tr td:first-child {
 
 /* index styling */
 /* defaults for elements: 2-col wide */
-body[data-page="README.md"] .markdown-section > * {
+body:is([data-page="README.md"], [data-page$="de/README.md"]) .markdown-section > * {
   max-width: calc(2 * var(--col-width));
 }
 /* row 1, col 3: profile image */
-body[data-page="README.md"] p:has(img.profile) {
+body:is([data-page="README.md"], [data-page$="de/README.md"]) p:has(img.profile) {
   width: calc(1 * var(--col-width));
   line-height: 0;
   position: absolute;
@@ -395,20 +395,20 @@ body[data-page="README.md"] p:has(img.profile) {
   transition-delay: 0.4s;
 }
 /* row 2, col 1: h1 and pronouns */
-body[data-page="README.md"] .markdown-section h1 {
+body:is([data-page="README.md"], [data-page$="de/README.md"]) .markdown-section h1 {
   width: var(--col-width);
 }
-body[data-page="README.md"] .markdown-section h1::before {
+body:is([data-page="README.md"], [data-page$="de/README.md"]) .markdown-section h1::before {
   height: 8.5rem;
 }
 @media only screen and (max-width: 503px) {
-  body[data-page="README.md"] .markdown-section h1::before {
+  body:is([data-page="README.md"], [data-page$="de/README.md"]) .markdown-section h1::before {
     height: 16.5rem;
   }
 }
 
 /* cv styling */
-body[data-page="cv/README.md"], body[data-page="cv/README.md"] * {
+body[data-page$="cv/README.md"], body[data-page$="cv/README.md"] * {
   --bg-color: #ffffff;
   --theme-color: #462bfb;
   --line-color: #462bfb44;
@@ -416,7 +416,7 @@ body[data-page="cv/README.md"], body[data-page="cv/README.md"] * {
 }
 
 /* portfolio root styling */
-body:is([data-page="portfolio/README.md"]) {
+body:is([data-page$="portfolio/README.md"]) {
   /* get available columns */
   --cols: 4;
 }
@@ -469,7 +469,7 @@ div.portfolio-grid a:hover img {
 }
 
 /* portfolio page styling */
-body:is([data-page^="portfolio/"]):not([data-page="portfolio/README.md"]) {
+body:is([data-page*="portfolio/"]):not([data-page$="portfolio/README.md"]) {
   /* get available columns */
   --cols: 6;
   --text-cols: 2;

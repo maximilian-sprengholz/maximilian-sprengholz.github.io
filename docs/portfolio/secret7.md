@@ -7,9 +7,9 @@ Personal projects, 2015, 2016, 2018.
 <!-- portfolio-replace -->
 <a class="button" id="lightbox-btn" href="#">All Images</a><br />
 <div class="image-col">
-<a href="portfolio/../img/secret7_1.webp" class="project-lightbox" title="Secret 7” Vinyl Covers portfolio image 0"><img src="portfolio/../img/secret7_1.webp" alt="Secret 7” Vinyl Covers portfolio image 0" /></a>
-<a href="portfolio/../img/secret7_2.webp" class="project-lightbox" title="Secret 7” Vinyl Covers portfolio image 1"></a>
-<a href="portfolio/../img/secret7_3.webp" class="project-lightbox" title="Secret 7” Vinyl Covers portfolio image 2"></a>
-<a href="portfolio/../img/secret7_4.webp" class="project-lightbox" title="Secret 7” Vinyl Covers portfolio image 3"></a>
+<a href="portfolio/../media/secret7_1.webp" class="project-lightbox" title="Secret 7” Vinyl Covers portfolio image 0"><img src="portfolio/../media/secret7_1.webp" alt="Secret 7” Vinyl Covers portfolio image 0" /></a>
+<a href="portfolio/../media/secret7_2.webp" class="project-lightbox" title="Secret 7” Vinyl Covers portfolio image 1"></a>
+<a href="portfolio/../media/secret7_3.webp" class="project-lightbox" title="Secret 7” Vinyl Covers portfolio image 2"></a>
+<a href="portfolio/../media/secret7_4.webp" class="project-lightbox" title="Secret 7” Vinyl Covers portfolio image 3"></a>
 </div>
 <!-- portfolio-replace -->
