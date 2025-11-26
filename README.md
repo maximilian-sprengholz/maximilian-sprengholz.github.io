@@ -3,6 +3,6 @@ Professional homepage built with the awesome [docsify](https://github.com/docsif
 To do:
 
 - [ ] New portfolio items
-- [ ] German language translation
+- [x] German language translation
 - [ ] Retina image support
 
