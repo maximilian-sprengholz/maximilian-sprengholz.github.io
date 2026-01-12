@@ -12,6 +12,10 @@ Ueckermünder Str. 1 <br />
 
 <table class="cv-fixed-l">
 <tr>
+  <td>01/2026 – </td>
+  <td>Data Analyst, Bundesverband Deutscher Stiftungen, Berlin</td>
+</tr>
+<tr>
   <td>05/2022 – 12/2024</td>
   <td>Researcher, Berliner Institut für empirische Integrations- und Migrationsforschung (BIM), Humboldt-Universität zu Berlin as part of the BMFSFJ-funded Forschungsgruppe Diskriminierung und Rassismus (FoDiRa) in the sub-project <i>Seeing Your Religion – Regional Variation of Anti-Muslim Discrimination and Racism on the German Labor Market</i>. PIs: Zerrin Salikutluk , Christian Hunkler (HU Berlin & BIM), Yuliya Kosyakova (IAB), Daniel Auer (MZES)</td>
 </tr>
@@ -42,7 +46,7 @@ Ueckermünder Str. 1 <br />
 
 <table class="cv-fixed-l">
 <tr>
-  <td>02/2019 – 06/2025</td>
+  <td>2019 – 2025</td>
   <td>
   PhD in Sociology, Humboldt-Universität zu Berlin<br />
   Thesis: <a href="https://doi.org/10.18452/33642">Intersecting Inequalities: Labor Market Outcomes by Nativity and Gender in Germany</a><br />
@@ -50,15 +54,15 @@ Ueckermünder Str. 1 <br />
   </td>
 </tr>
 <tr>
-  <td>10/2016 – 02/2019</td>
+  <td>2016 – 2019</td>
   <td>MA in Social Sciences, Humboldt-Universität zu Berlin</td>
 </tr>
 <tr>
-  <td>10/2010 – 09/2013</td>
+  <td>2010 – 2013</td>
   <td>MA in Public Communication, Friedrich-Schiller-Universität Jena</td>
 </tr>
 <tr>
-  <td>10/2007 – 09/2010</td>
+  <td>2007 – 2010</td>
   <td>BA in Communication Science, Friedrich-Schiller-Universität Jena</td>
 </tr>
 </table>
@@ -86,7 +90,7 @@ Ueckermünder Str. 1 <br />
 <tr>
   <td>Ongoing</td>
   <td>
-  HarvardX CS50AI course <i>Machine Learning and AI with Python</i>, online, expected completion 11/2025
+  HarvardX CS50AI course <i>Machine Learning and AI with Python</i>, online
   </td>
 </tr>
 <tr>
